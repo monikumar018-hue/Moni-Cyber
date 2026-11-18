@@ -1,0 +1,6 @@
+body { margin: 0; font-family: system-ui, sans-serif; background: #101820; color: #fff; }
+.dashboard { max-width: 760px; margin: 3rem auto; padding: 0 1rem; }
+.button, button { display: inline-block; border: 0; border-radius: 6px; background: #18a558; color: #fff; padding: 0.7rem 1rem; text-decoration: none; cursor: pointer; }
+textarea, select { width: 100%; box-sizing: border-box; margin: 0.5rem 0; padding: 0.7rem; }
+section { margin-top: 2rem; }
+li { margin: 0.5rem 0; }
