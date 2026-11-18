@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-const crypto = require("node:crypto");
 const express = require("express");
 const session = require("express-session");
 const helmet = require("helmet");
@@ -15,11 +14,7 @@ const securityRoutes = require("./routes/security");
 const { initDatabase } = require("./config/database");
 
 const app = express();
-const {
-  PORT = 3000,
-  SESSION_SECRET,
-  NODE_ENV = "development",
-} = process.env;
+const { PORT = 3000, SESSION_SECRET, NODE_ENV = "development" } = process.env;
 
 if (!SESSION_SECRET) {
   throw new Error("SESSION_SECRET is required. Copy .env.example to .env and configure it.");

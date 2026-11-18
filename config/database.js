@@ -18,8 +18,7 @@ async function initDatabase() {
 async function readDatabase() {
   try {
     const contents = await fs.readFile(dataFile, "utf8");
-    const parsed = JSON.parse(contents);
-    return { ...emptyDatabase, ...parsed };
+    return { ...emptyDatabase, ...JSON.parse(contents) };
   } catch (error) {
     if (error.code === "ENOENT") return { ...emptyDatabase };
     throw error;

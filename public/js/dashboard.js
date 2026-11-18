@@ -29,9 +29,7 @@
       $("#pages-section").hidden = false;
       $("#draft-section").hidden = false;
       await loadDrafts();
-    } catch (error) {
-      $("#status").textContent = error.message;
-    }
+    } catch (error) { $("#status").textContent = error.message; }
   }
 
   async function loadDrafts() {
@@ -45,10 +43,7 @@
       const button = document.createElement("button");
       button.textContent = "Delete";
       button.addEventListener("click", async () => {
-        try {
-          await request(`/api/drafts/${encodeURIComponent(draft.id)}`, { method: "DELETE" });
-          await loadDrafts();
-        } catch (error) { alert(error.message); }
+        try { await request(`/api/drafts/${encodeURIComponent(draft.id)}`, { method: "DELETE" }); await loadDrafts(); } catch (error) { alert(error.message); }
       });
       item.append(text, button);
       list.append(item);

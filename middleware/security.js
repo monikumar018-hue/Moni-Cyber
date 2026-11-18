@@ -3,8 +3,7 @@ function sameOrigin(req, res, next) {
   const host = req.get("host");
   if (origin && host) {
     try {
-      const parsed = new URL(origin);
-      if (parsed.host !== host) return res.status(403).json({ error: "Invalid origin." });
+      if (new URL(origin).host !== host) return res.status(403).json({ error: "Invalid origin." });
     } catch {
       return res.status(403).json({ error: "Invalid origin." });
     }
