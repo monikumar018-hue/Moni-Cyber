@@ -9,24 +9,22 @@
 <body>
   <main class="dashboard">
     <h1>MONI CYBER SECURITY</h1>
-    <p id="status">Checking Meta connection...</p>
-
-    <a class="button" id="login" href="/auth/meta">Connect Meta Account</a>
-
+    <p id="status" role="status">Checking Meta connection...</p>
+    <a class="button" href="/auth/meta">Connect Meta Account</a>
     <section id="pages-section" hidden>
       <h2>Select a Facebook Page</h2>
-      <select id="pages"></select>
+      <select id="pages" aria-label="Facebook Pages"></select>
       <button id="select-page" type="button">Select Page</button>
     </section>
-
     <section id="draft-section" hidden>
       <h2>Create Draft</h2>
-      <textarea id="content" maxlength="63206" rows="8" placeholder="Post content"></textarea>
+      <textarea id="content" maxlength="63206" rows="8" placeholder="Post content" aria-label="Post content"></textarea>
       <button id="create-draft" type="button">Create Draft</button>
       <h3>Drafts</h3>
       <ul id="drafts"></ul>
     </section>
+    <p><small>Scheduled items are saved but are not automatically published by this starter app.</small></p>
   </main>
-  <script src="/js/dashboard.js"></script>
+  <script src="/js/dashboard.js" defer></script>
 </body>
 </html>
